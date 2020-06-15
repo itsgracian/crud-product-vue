@@ -11,6 +11,9 @@ Vue.component('view-products', {
             </div>
 
         </div>
+        <div class="not-found" v-if="products && products.length <=0 "><div class="not-found-icon">
+        <i class="fa fa-desktop" aria-hidden="true"></i>
+        </div><div>product not available</div></div>
     </div>
 </div>`
 });
