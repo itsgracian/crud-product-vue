@@ -16,7 +16,7 @@ ul{
 .app-header{
     position: fixed;
     width: 100%;
-    z-index: 100;
+    z-index: 400;
     background: var(--whiteColor);
     top: 0;
     padding: 5px;
@@ -98,11 +98,26 @@ ul{
     border-radius: 20px;
     display: inline-block;
     margin-top: 20px;
+    cursor: pointer;
 }
 .p-item .p-img{
     width: 100%;
+    position: relative;
+    cursor: pointer;
 }
 .p-img img{
+    width: 100%;
+    border-radius: 20px;
+}
+.p-img::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #0000000f;
+    z-index: 100;
     width: 100%;
     border-radius: 20px;
 }
@@ -113,6 +128,7 @@ ul{
     bottom: 0;
     left: 0;
     right: 0;
+    z-index: 300;
 }
 .c-product .product-form{
   width: 50%;
@@ -139,7 +155,6 @@ ul{
     min-height: 500px;
 }
 .c-image .upload-input{
-    position: absolute;
     opacity: 0;
     cursor: pointer;
 }
@@ -152,14 +167,15 @@ ul{
     box-shadow: none;
     background: #bfbebf05;
     color: var(--blackColor);
-    box-shadow: 0px 0px 0px 2px;
+
 }
-.custom-upload-btn .upload-icon{
- font-size: 25px;
+.upload-icon{
+ font-size: 20px;
  position: absolute;
+ margin-top: 2px;
 }
-.custom-upload-btn small{
-    margin-left: 30px;
+.custom-upload-btn small, .save-img small{
+    margin-left: 20px;
     font-weight: bold;
 }
 .bold{
@@ -184,7 +200,6 @@ ul{
 }
 .p-input-item label{
     font-size: 13px;
-    display: none;
 }
 .p-input-item input{
     height: 45px;
@@ -206,11 +221,83 @@ ul{
     outline: none;
     box-shadow: none;
 }
-.close{
-    position: absolute;
+.close-form{
     right: 0;
-    margin: 20px;
+    position: absolute;
+    margin: 50px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.image-item{
+    border-radius: 10px;
+    width: 100%;
+    margin-top: 20px;
+}
+.error{
+    font-size: 12px;
+    color: red;
+    position: absolute;
     top: 0;
-    z-index: 100;
+    margin-left: 80px;
+    margin-top: 3px;
+}
+.progress-bar{
+    width: 50%;
+    height: 10px;
+    border-radius: 2px;
+    margin: auto;
+    position: absolute;
+    margin-top: 100px;
+    border: 1px solid rgb(0, 0, 0);
+}
+.progress-bar .loading{
+    background: rgb(0, 0, 0);
+    height: 100%;
+    border-radius: 1px;
+}
+.btn-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.save-img{
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    margin-top: 20px;
+    outline: none;
+    padding-left: 25px;
+    padding-right: 25px;
+    background: no-repeat;
+    border: 2px solid #000;
+    cursor: pointer;
+}
+.p-price{
+    font-weight: bold;
     font-size: 30px;
+    padding: 10px;
+    bottom: 0;
+    margin-bottom: 10px;
+    color: var(--blackColor);
+    z-index: 200;
+}
+.validation-error{
+    position: absolute;
+    color: red;
+}
+.not-found{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.not-found .not-found-icon{
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+.mt-5{
+    margin-top: 1rem;
+}
+.desc{
+    margin-top: 1rem;
 }

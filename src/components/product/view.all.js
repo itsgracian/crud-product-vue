@@ -1,48 +1,19 @@
 Vue.component('view-products', {
+    props: ['products', 'view'],
     template: `  <div class="display-items">
     <div class="app-container">
         <div class="v-all-products">
-            <div class="p-item">
+            <div class="p-item" v-if="products && products.length > 0" v-for="item in products" @click="view(item.id)">
                 <div class="p-img">
-                    <img src="https://images.pexels.com/photos/1055691/pexels-photo-1055691.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
+                    <img :src="item.image" alt="">
                 </div>
+                <div class="p-price">{{'$ ' + item.price}}</div>
             </div>
-            <div class="p-item">
-                <div class="p-img">
-                    <img src="https://images.pexels.com/photos/1462637/pexels-photo-1462637.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="">
-                </div>
-            </div>
-            <div class="p-item">
-                <div class="p-img">
-                    <img src="https://images.pexels.com/photos/1055691/pexels-photo-1055691.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
-                </div>
-            </div>
-            <div class="p-item">
-                <div class="p-img">
-                    <img src="https://images.pexels.com/photos/1126993/pexels-photo-1126993.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="">
-                </div>
-            </div>
-            <div class="p-item">
-                <div class="p-img">
-                    <img src="https://images.pexels.com/photos/157675/fashion-men-s-individuality-black-and-white-157675.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
-                </div>
-            </div>
-            <div class="p-item">
-                <div class="p-img">
-                    <img src="https://images.pexels.com/photos/1462637/pexels-photo-1462637.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="">
-                </div>
-            </div>
-            <div class="p-item">
-                <div class="p-img">
-                    <img src="https://images.pexels.com/photos/965324/pexels-photo-965324.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="">
-                </div>
-            </div>
-            <div class="p-item">
-                <div class="p-img">
-                    <img src="https://images.pexels.com/photos/1462637/pexels-photo-1462637.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="">
-                </div>
-            </div>
+
         </div>
+        <div class="not-found" v-if="products && products.length <=0 "><div class="not-found-icon">
+        <i class="fa fa-desktop" aria-hidden="true"></i>
+        </div><div>product not available</div></div>
     </div>
 </div>`
 });
