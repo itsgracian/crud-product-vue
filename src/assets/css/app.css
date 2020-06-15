@@ -206,11 +206,10 @@ ul{
     outline: none;
     box-shadow: none;
 }
-.close{
-    position: absolute;
+.close-form{
     right: 0;
-    margin: 20px;
-    top: 0;
-    z-index: 100;
-    font-size: 30px;
+    position: absolute;
+    margin: 50px;
+    font-weight: bold;
+    cursor: pointer;
 }

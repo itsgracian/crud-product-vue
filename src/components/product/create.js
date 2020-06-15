@@ -1,5 +1,7 @@
 Vue.component('create-product', {
+    props: ['close'],
     template: `<div class="c-product">
+    <div class="close-form" role="button" v-on:click="close($event)">x close</div>
     <div class="product-form">
         <div class="c-image">
             <div class="bold">Image</div>
@@ -28,4 +30,4 @@ Vue.component('create-product', {
         </div>
     </div>
 </div>`
-})
+});

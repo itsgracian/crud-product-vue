@@ -11,10 +11,10 @@
 </head>
 <body>
     <div id="app">
-      <header-component></header-component>
+      <header-component v-bind:open="onOpen"></header-component>
       <welcome-component></welcome-component>
       <view-products></view-products>
-      <create-product v-if="isOpen"></create-product>
+      <create-product v-if="isOpen" v-bind:close="onClose"></create-product>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="./src/components/header/index.js"></script>
