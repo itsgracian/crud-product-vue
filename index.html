@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue CRUD Product</title>
+    <link rel="stylesheet" href="./src/assets/css/app.css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" 
+    rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" 
+    crossorigin="anonymous">
+</head>
+<body>
+    <div id="app">
+        <div class="app-header">
+            <div class="app-container">
+            <div class="header-grid">
+                <div class="menu-list">
+                    <ul>
+                        <li><a href="#">Product</a></li>
+                    </ul>
+                    <ul class="right-menu">
+                        <li><a href="#">new product</a></li>
+                    </ul>
+                </div>
+                <div class="logo"><i class="fa fa-heart-o" aria-hidden="true"></i></div>
+            </div>
+            </div>
+        </div>
+        <div class="welcome">
+           <div class="app-container">
+            <div class="w-35 welcome-title">welcome to our online store</div>
+           </div>
+        </div>
+        <div class="display-items">
+            <div class="app-container">
+                <div class="v-all-products">
+                    <div class="p-item">
+                        <div class="p-img">
+                            <img src="https://images.pexels.com/photos/1055691/pexels-photo-1055691.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
+                        </div>
+                    </div>
+                    <div class="p-item">
+                        <div class="p-img">
+                            <img src="https://images.pexels.com/photos/1462637/pexels-photo-1462637.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="">
+                        </div>
+                    </div>
+                    <div class="p-item">
+                        <div class="p-img">
+                            <img src="https://images.pexels.com/photos/1055691/pexels-photo-1055691.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
+                        </div>
+                    </div>
+                    <div class="p-item">
+                        <div class="p-img">
+                            <img src="https://images.pexels.com/photos/1126993/pexels-photo-1126993.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="">
+                        </div>
+                    </div>
+                    <div class="p-item">
+                        <div class="p-img">
+                            <img src="https://images.pexels.com/photos/157675/fashion-men-s-individuality-black-and-white-157675.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
+                        </div>
+                    </div>
+                    <div class="p-item">
+                        <div class="p-img">
+                            <img src="https://images.pexels.com/photos/1462637/pexels-photo-1462637.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="">
+                        </div>
+                    </div>
+                    <div class="p-item">
+                        <div class="p-img">
+                            <img src="https://images.pexels.com/photos/965324/pexels-photo-965324.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="">
+                        </div>
+                    </div>
+                    <div class="p-item">
+                        <div class="p-img">
+                            <img src="https://images.pexels.com/photos/1462637/pexels-photo-1462637.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="c-product">
+            <div class="product-form">
+                <div class="c-image">
+                    <div class="bold">Image</div>
+                    <div class="img-upload"><input type="file" name="image" class="upload-input">
+                        <button class="custom-upload-btn"><i class="fa fa-cloud-upload upload-icon" aria-hidden="true"></i><small>select image</small></button></div>
+                </div>
+                <div>
+                    <div class="bold">product information</div>
+                    <div class="product-description">
+                        <div class="p-input-item">
+                            <label for="">name</label>
+                            <input type="text" name="name" placeholder="product name">
+                        </div>
+                        <div class="p-input-item">
+                            <label for="">quantity</label>
+                            <input type="number" name="quantity" placeholder="quantity" required>
+                        </div>
+                        <div class="p-input-item">
+                            <label for="">description</label>
+                            <textarea name="description" placeholder="description"></textarea>
+                        </div>
+                        <div class="p-input-item">
+                            <button type="submit" class="submit-btn">save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</body>
+</html>
