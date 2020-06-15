@@ -315,6 +315,6 @@ footer{
     padding: 15px;
 }
 .footer-menu a{
-    color: #0d56ff;
+    color: var(--blackColor);
     font-size: 40px;
 }
