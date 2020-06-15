@@ -23,6 +23,17 @@ const app = new Vue({
         onClose: function(e){
             e.preventDefault();
             this.isOpen = false;
+            this.name= '';
+            this.quantity='';
+            this.image='';
+            this.description='';
+            this.price='';
+            this.file=null;
+            this.onView= false;
+            this.product=null;
+            this.loadingProgress=0;
+            this.imageError="";
+            this.errors=null;
         },
         onSelectImage: function(e){
             const { files }= e.target;
