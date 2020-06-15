@@ -13,9 +13,11 @@ const app = new Vue({
         description: '',
         quantity:'',
         image: '',
+        price: '',
         imageError: '',
         loadingProgress: 0,
         file: null,
+        errors: null
     },
     methods: {
         onOpen: function(e){
@@ -57,10 +59,17 @@ const app = new Vue({
                 this.imageError='please select image';
             }
         },
-        newProduct: function(e){
+
+        saveProduct: function(e){
             e.preventDefault();
-            const {name, quantity, image, description } = this;
-            this.products = [...this.products, {name, quantity, image, description, id: Math.random()}]
+            const {name, quantity, image, description, price } = this;
+            const {errors, valid } = validation({name, quantity, image, price });
+            if(!valid){
+                this.errors = errors;
+            }else{
+                this.products = [...this.products, {name, quantity, image, description, id: Math.random(), price}];
+                this.isOpen = false;
+            }
         }
     }
 });

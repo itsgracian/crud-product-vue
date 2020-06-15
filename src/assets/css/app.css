@@ -16,7 +16,7 @@ ul{
 .app-header{
     position: fixed;
     width: 100%;
-    z-index: 100;
+    z-index: 400;
     background: var(--whiteColor);
     top: 0;
     padding: 5px;
@@ -128,6 +128,7 @@ ul{
     bottom: 0;
     left: 0;
     right: 0;
+    z-index: 300;
 }
 .c-product .product-form{
   width: 50%;
@@ -279,4 +280,8 @@ ul{
     margin-bottom: 10px;
     color: var(--blackColor);
     z-index: 200;
+}
+.validation-error{
+    position: absolute;
+    color: red;
 }

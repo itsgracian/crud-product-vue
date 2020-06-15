@@ -14,13 +14,14 @@
       <header-component v-bind:open="onOpen"></header-component>
       <welcome-component></welcome-component>
       <view-products :products="products"></view-products>
-      <create-product v-if="isOpen" v-bind:close="onClose" v-bind:state="{name, quantity, description, imageError, loadingProgress, file }" 
-      v-bind:image="image" v-bind:select="onSelectImage" v-bind:upload="onUpload"></create-product>
+      <create-product v-if="isOpen" :close="onClose" v-bind:state="_data" 
+      :image="image" :select="onSelectImage" :upload="onUpload" :save="saveProduct"></create-product>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
     <script src="./src/components/header/index.js"></script>
     <script src="./src/components/welcome/index.js"></script>
+    <script src="./src/components/helpers/validation.js"></script>
     <script src="./src/components/product/view.all.js"></script>
     <script src="./src/components/product/create.js"></script>
     <script src="./src/components/app.js"></script>
