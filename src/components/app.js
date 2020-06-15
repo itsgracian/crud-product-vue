@@ -2,14 +2,7 @@ const app = new Vue({
     el: '#app',
     data: {
         isOpen: false,
-        products: [{
-            id:Math.random(),
-            name: 'Fashion killer',
-            price: '450',
-            description: 'description',
-            image: 'https://images.pexels.com/photos/965324/pexels-photo-965324.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
-            quantity: '10'
-        }],
+        products: [],
         name: '',
         description: '',
         quantity:'',
@@ -72,6 +65,17 @@ const app = new Vue({
             }else{
                 this.products = [...this.products, {name, quantity, image, description, id: Math.random(), price}];
                 this.isOpen = false;
+                this.name= '';
+                this.quantity='';
+                this.image='';
+                this.description='';
+                this.price='';
+                this.file=null;
+                this.onView= false;
+                this.product=null;
+                this.loadingProgress=0;
+                this.imageError="";
+                this.errors=null;
             }
         },
     
@@ -85,6 +89,7 @@ const app = new Vue({
 
         closeProduct: function(){
            this.onView = false;
+           this.product = null;
         }
     }
 });
