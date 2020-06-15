@@ -3,7 +3,7 @@ const app = new Vue({
     data: {
         isOpen: false,
         products: [{
-            id:1,
+            id:Math.random(),
             name: 'Fashion killer',
             price: '450',
             description: 'description',
@@ -12,7 +12,10 @@ const app = new Vue({
         name: '',
         description: '',
         quantity:'',
-        image: ''
+        image: '',
+        imageError: '',
+        loadingProgress: 0,
+        file: null,
     },
     methods: {
         onOpen: function(e){
@@ -23,5 +26,41 @@ const app = new Vue({
             e.preventDefault();
             this.isOpen = false;
         },
+        onSelectImage: function(e){
+            const { files }= e.target;
+            this.file=files[0]
+        },
+        onUpload: function(){
+            if(this.file){
+                const URL = 'https://api.cloudinary.com/v1_1/heza/image/upload';
+                const form = new FormData();
+                form.append('file', this.file);
+                form.append('upload_preset', 'vue_challenge_preset');
+                axios.post(URL, form,{headers: {
+                    ContentType: 'multipart/form-data'
+                }, onUploadProgress: function(){
+                  const interval = setInterval(()=>{
+                      if(this.loadingProgress < 100){
+                          this.loadingProgress += .1;
+                      }else{
+                          clearInterval(interval);
+                      }
+                  },10);
+                }.bind(this)}).then(res=>{
+                    const {secure_url} = res.data;
+                    this.image=secure_url;
+                  
+                }).catch((error)=>{
+                    this.imageError = 'uploading image failed';
+                });   
+            }else{
+                this.imageError='please select image';
+            }
+        },
+        newProduct: function(e){
+            e.preventDefault();
+            const {name, quantity, image, description } = this;
+            this.products = [...this.products, {name, quantity, image, description, id: Math.random()}]
+        }
     }
 });

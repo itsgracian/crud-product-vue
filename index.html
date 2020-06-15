@@ -13,10 +13,12 @@
     <div id="app">
       <header-component v-bind:open="onOpen"></header-component>
       <welcome-component></welcome-component>
-      <view-products></view-products>
-      <create-product v-if="isOpen" v-bind:close="onClose"></create-product>
+      <view-products :products="products"></view-products>
+      <create-product v-if="isOpen" v-bind:close="onClose" v-bind:state="{name, quantity, description, imageError, loadingProgress, file }" 
+      v-bind:image="image" v-bind:select="onSelectImage" v-bind:upload="onUpload"></create-product>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
     <script src="./src/components/header/index.js"></script>
     <script src="./src/components/welcome/index.js"></script>
     <script src="./src/components/product/view.all.js"></script>

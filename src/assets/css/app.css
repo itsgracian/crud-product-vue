@@ -98,11 +98,26 @@ ul{
     border-radius: 20px;
     display: inline-block;
     margin-top: 20px;
+    cursor: pointer;
 }
 .p-item .p-img{
     width: 100%;
+    position: relative;
+    cursor: pointer;
 }
 .p-img img{
+    width: 100%;
+    border-radius: 20px;
+}
+.p-img::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #0000000f;
+    z-index: 100;
     width: 100%;
     border-radius: 20px;
 }
@@ -139,7 +154,6 @@ ul{
     min-height: 500px;
 }
 .c-image .upload-input{
-    position: absolute;
     opacity: 0;
     cursor: pointer;
 }
@@ -152,14 +166,15 @@ ul{
     box-shadow: none;
     background: #bfbebf05;
     color: var(--blackColor);
-    box-shadow: 0px 0px 0px 2px;
+
 }
-.custom-upload-btn .upload-icon{
- font-size: 25px;
+.upload-icon{
+ font-size: 20px;
  position: absolute;
+ margin-top: 2px;
 }
-.custom-upload-btn small{
-    margin-left: 30px;
+.custom-upload-btn small, .save-img small{
+    margin-left: 20px;
     font-weight: bold;
 }
 .bold{
@@ -212,4 +227,56 @@ ul{
     margin: 50px;
     font-weight: bold;
     cursor: pointer;
+}
+.image-item{
+    border-radius: 10px;
+    width: 100%;
+    margin-top: 20px;
+}
+.error{
+    font-size: 12px;
+    color: red;
+    position: absolute;
+    top: 0;
+    margin-left: 80px;
+    margin-top: 3px;
+}
+.progress-bar{
+    width: 50%;
+    height: 10px;
+    border-radius: 2px;
+    margin: auto;
+    position: absolute;
+    margin-top: 100px;
+    border: 1px solid rgb(0, 0, 0);
+}
+.progress-bar .loading{
+    background: rgb(0, 0, 0);
+    height: 100%;
+    border-radius: 1px;
+}
+.btn-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.save-img{
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    margin-top: 20px;
+    outline: none;
+    padding-left: 25px;
+    padding-right: 25px;
+    background: no-repeat;
+    border: 2px solid #000;
+    cursor: pointer;
+}
+.p-price{
+    font-weight: bold;
+    font-size: 30px;
+    padding: 10px;
+    bottom: 0;
+    margin-bottom: 10px;
+    color: var(--blackColor);
+    z-index: 200;
 }
