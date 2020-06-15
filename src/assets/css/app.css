@@ -200,7 +200,6 @@ ul{
 }
 .p-input-item label{
     font-size: 13px;
-    display: none;
 }
 .p-input-item input{
     height: 45px;
@@ -295,4 +294,10 @@ ul{
 .not-found .not-found-icon{
     font-size: 40px;
     margin-bottom: 20px;
+}
+.mt-5{
+    margin-top: 1rem;
+}
+.desc{
+    margin-top: 1rem;
 }

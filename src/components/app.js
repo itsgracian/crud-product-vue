@@ -2,7 +2,14 @@ const app = new Vue({
     el: '#app',
     data: {
         isOpen: false,
-        products: [],
+        products: [{
+            id:Math.random(),
+            name: 'Fashion killer',
+            price: '450',
+            description: 'description',
+            image: 'https://images.pexels.com/photos/965324/pexels-photo-965324.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+            quantity: '10'
+        }],
         name: '',
         description: '',
         quantity:'',
@@ -11,7 +18,9 @@ const app = new Vue({
         imageError: '',
         loadingProgress: 0,
         file: null,
-        errors: null
+        errors: null,
+        product: null,
+        onView: false
     },
     methods: {
         onOpen: function(e){
@@ -64,6 +73,18 @@ const app = new Vue({
                 this.products = [...this.products, {name, quantity, image, description, id: Math.random(), price}];
                 this.isOpen = false;
             }
+        },
+    
+        viewSpecificProduct: function(productId){
+            const find = this.products.find(item=> String(item.id) === String(productId));
+            if(find){
+                this.product = find;
+                this.onView = true;
+            }
+        },
+
+        closeProduct: function(){
+           this.onView = false;
         }
     }
 });
