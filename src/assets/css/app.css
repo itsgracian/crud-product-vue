@@ -2,6 +2,7 @@
 :root{
     --whiteColor: #fff;
     --blackColor: #000;
+    --f8: #f8f8f8
 }
 *{
     font-family: 'Raleway', sans-serif;
@@ -104,4 +105,104 @@ ul{
 .p-img img{
     width: 100%;
     border-radius: 20px;
+}
+.c-product{
+    position: fixed;
+    top: 0;
+    background: #ffffffa6;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.c-product .product-form{
+  width: 45%;
+  background: var(--whiteColor);
+  border-radius: 40px;
+  margin: auto;
+  margin-top: 100px;
+  box-shadow: 0px 0px 40px 0px #928c8c21;
+  padding: 30px;
+}
+.product-form{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 30px;
+}
+.product-form .c-image{
+    position: relative;
+}
+.c-image .img-upload{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 500px;
+}
+.c-image .upload-input{
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+.c-image .custom-upload-btn{
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    outline: none;
+    box-shadow: none;
+    background: #bfbebf05;
+    color: var(--blackColor);
+    box-shadow: 0px 0px 0px 2px;
+}
+.custom-upload-btn .upload-icon{
+ font-size: 25px;
+ position: absolute;
+}
+.custom-upload-btn small{
+    margin-left: 30px;
+    font-weight: bold;
+}
+.bold{
+    font-weight: bold;
+}
+.product-description{
+    position: relative;
+    padding-top: 30px;
+}
+.product-description .p-input-item{
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
+.p-input-item input, .p-input-item textarea{
+    border: none;
+    border-bottom: 1px solid 1px solid #f8f8f8cf;
+    outline: none;
+    box-shadow: none;
+    border-radius: 10px;
+    margin-top: 0.5rem;
+    width: 90%;
+}
+.p-input-item label{
+    font-size: 13px;
+    display: none;
+}
+.p-input-item input{
+    height: 45px;
+}
+.p-input-item textarea{
+    height: 70px;
+    padding-top: 20px;
+}
+.p-input-item .submit-btn{
+    padding: 15px;
+    padding-right: 30px;
+    padding-left: 30px;
+    border: none;
+    border-radius: 10px;
+    color: var(--whiteColor);
+    background: var(--blackColor);
+    font-size: 15px;
+    font-weight: bold;
+    outline: none;
+    box-shadow: none;
 }
